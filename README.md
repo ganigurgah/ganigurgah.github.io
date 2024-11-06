@@ -1,1 +1,1 @@
-# ganigurgah.github.io
+# ganigurgah.com.tr
