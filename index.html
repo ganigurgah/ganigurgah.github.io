@@ -1146,11 +1146,14 @@
         I work in software development and user experience design. I am passionate about writing clean code and creating
         intuitive interfaces. I also have experience in test-driven software development. An application that hasn't
         been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and
-        aesthetic quality.
+        aesthetic quality. Lately, I've been deeply focused on practical AI engineering — building Archon, a self-hosted
+        AI assistant that brings RAG and fine-tuning directly into the software development lifecycle, and PCU, an
+        autonomous OS-layer agent driven by natural language. I believe AI is most powerful when it's grounded in your
+        own context, not generic answers.
       </p>
       <div class="stats-row">
         <div class="stat-item">
-          <div class="stat-value">18+</div>
+          <div class="stat-value" id="years-experience"></div>
           <div class="stat-label" data-i18n="stats_years">Years Experience</div>
         </div>
         <div class="stat-item">
@@ -1418,8 +1421,8 @@
         hero_scroll: "Kaydır",
         about_label: "Hakkımda",
         about_heading: "Güzel şeyler<br><em>inşa etmeyi</em><br>seviyorum.",
-        about_text: "Yazılım geliştirme ve kullanıcı deneyimi tasarımı üzerine çalışıyorum. Temiz kod yazma ve sezgisel arayüzler oluşturma konusunda tutkum var. Test odaklı yazılım geliştirme konusunda da deneyimliyim. Çok yönlü test edilmemiş bir uygulama potansiyel olarak hatalıdır. Her projede hem teknik mükemmeliyeti hem de estetik kaliteyi bir arada sunmayı hedefliyorum.",
-        stats_years: "Yıl Deneyim",
+        about_text: "Yazılım geliştirme ve kullanıcı deneyimi tasarımı üzerine çalışıyorum. Temiz kod yazma ve sezgisel arayüzler oluşturma konusunda tutkum var. Test odaklı yazılım geliştirme konusunda da deneyimliyim. Çok yönlü test edilmemiş bir uygulama potansiyel olarak hatalıdır. Her projede hem teknik mükemmeliyeti hem de estetik kaliteyi bir arada sunmayı hedefliyorum. Son dönemde pratik AI mühendisliğine yoğunlaştım — Archon ile RAG ve fine-tuning'i doğrudan yazılım geliştirme sürecine entegre eden self-hosted bir AI asistanı, PCU ile ise doğal dil komutlarıyla çalışan otonom bir işletim sistemi katmanı inşa ediyorum. AI'ın en güçlü olduğu yer, kendi bağlamınızla çalıştığı yerdir; genel cevaplar değil.",
+        stats_years: "Yıl Prof Deneyim",
         stats_projects: "Proje",
         stats_caffeine: "Kafein",
         about_skills_label: "Teknolojiler",
@@ -1459,8 +1462,8 @@
         hero_scroll: "Scroll",
         about_label: "About Me",
         about_heading: "I love building<br><em>beautiful</em><br>things.",
-        about_text: "I work in software development and user experience design. I am passionate about writing clean code and creating intuitive interfaces. I also have experience in test-driven software development. An application that hasn't been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and aesthetic quality.",
-        stats_years: "Years Experience",
+        about_text: "I work in software development and user experience design. I am passionate about writing clean code and creating intuitive interfaces. I also have experience in test-driven software development. An application that hasn't been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and aesthetic quality. Lately, I've been deeply focused on practical AI engineering — building Archon, a self-hosted AI assistant that brings RAG and fine-tuning directly into the software development lifecycle, and PCU, an autonomous OS-layer agent driven by natural language. I believe AI is most powerful when it's grounded in your own context, not generic answers.",
+        stats_years: "Years Prof Experience",
         stats_projects: "Projects",
         stats_caffeine: "Caffeine",
         about_skills_label: "Technologies",
@@ -1525,6 +1528,11 @@
       }
     }
     updateCounter();
+
+    const yearsEl = document.getElementById('years-experience');
+    if (yearsEl) {
+      yearsEl.textContent = (new Date().getFullYear() - 2010) + '+';
+    }
   </script>
 </body>
 
