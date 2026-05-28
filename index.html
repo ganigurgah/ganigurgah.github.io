@@ -31,10 +31,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap"
+    rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -58,7 +62,9 @@
       --radius: 3px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -132,6 +138,7 @@
       pointer-events: none;
       z-index: 0;
     }
+
     .glow-orb-1 {
       width: 600px;
       height: 600px;
@@ -139,6 +146,7 @@
       top: -200px;
       left: -200px;
     }
+
     .glow-orb-2 {
       width: 400px;
       height: 400px;
@@ -186,8 +194,15 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     .nav-right {
@@ -225,8 +240,13 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
     .lang-switcher {
       display: flex;
@@ -249,7 +269,9 @@
       letter-spacing: 0.1em;
     }
 
-    .lang-btn:hover { color: var(--text); }
+    .lang-btn:hover {
+      color: var(--text);
+    }
 
     .lang-btn.active {
       background: var(--accent);
@@ -258,7 +280,10 @@
     }
 
     /* ─── SECTIONS ──────────────────────────────────── */
-    section { position: relative; z-index: 1; }
+    section {
+      position: relative;
+      z-index: 1;
+    }
 
     /* ─── HERO ──────────────────────────────────────── */
     #hero {
@@ -369,8 +394,14 @@
       transition: opacity 0.25s;
     }
 
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200, 245, 66, 0.25); }
-    .btn-primary:hover::after { opacity: 0.1; }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(200, 245, 66, 0.25);
+    }
+
+    .btn-primary:hover::after {
+      opacity: 0.1;
+    }
 
     .btn-outline {
       border: 1px solid var(--border2);
@@ -385,7 +416,9 @@
       background: var(--accent-dim);
     }
 
-    a:focus-visible, button:focus-visible, .btn:focus-visible {
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 4px;
     }
@@ -459,8 +492,17 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200, 245, 66, 0.4); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(200, 245, 66, 0); }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(200, 245, 66, 0.4);
+      }
+
+      50% {
+        opacity: 0.7;
+        box-shadow: 0 0 0 4px rgba(200, 245, 66, 0);
+      }
     }
 
     /* ─── ABOUT ─────────────────────────────────────── */
@@ -532,7 +574,9 @@
       position: relative;
     }
 
-    .stat-item:last-child { border-right: none; }
+    .stat-item:last-child {
+      border-right: none;
+    }
 
     .stat-item::before {
       content: '';
@@ -545,7 +589,9 @@
       transition: width 0.5s ease;
     }
 
-    .stat-item:hover::before { width: 100%; }
+    .stat-item:hover::before {
+      width: 100%;
+    }
 
     .stat-value {
       font-size: 2rem;
@@ -564,7 +610,9 @@
     }
 
     /* Skills */
-    .about-right { padding-top: 1.5rem; }
+    .about-right {
+      padding-top: 1.5rem;
+    }
 
     .skills-grid {
       display: grid;
@@ -600,8 +648,14 @@
       transition: width 0.3s ease;
     }
 
-    .skill-item:hover { color: var(--accent); background: var(--surface2); }
-    .skill-item:hover::after { width: 100%; }
+    .skill-item:hover {
+      color: var(--accent);
+      background: var(--surface2);
+    }
+
+    .skill-item:hover::after {
+      width: 100%;
+    }
 
     .skill-name {
       display: block;
@@ -622,7 +676,10 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .skill-level a:hover { color: var(--accent); }
+
+    .skill-level a:hover {
+      color: var(--accent);
+    }
 
     /* ─── PROJECTS ──────────────────────────────────── */
     #projects {
@@ -677,8 +734,13 @@
       transition: opacity 0.4s;
     }
 
-    .project-card:hover { background: var(--surface2); }
-    .project-card:hover::before { opacity: 1; }
+    .project-card:hover {
+      background: var(--surface2);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
 
     .project-label {
       font-family: var(--font-mono);
@@ -750,18 +812,26 @@
       color: var(--accent);
       text-decoration: none;
       letter-spacing: 0.12em;
-      opacity: 0;
-      transform: translateY(6px);
+      opacity: 0.55;
+      transform: translateY(0);
       transition: opacity 0.25s, transform 0.25s;
     }
 
     .project-card:hover .project-link {
       opacity: 1;
-      transform: translateY(0);
     }
 
-    .project-link svg { transition: transform 0.2s; }
-    .project-link:hover svg { transform: translate(3px, -3px); }
+    .project-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .project-link svg {
+      transition: transform 0.2s;
+    }
+
+    .project-link:hover svg {
+      transform: translate(3px, -3px);
+    }
 
     /* ─── CONTACT ───────────────────────────────────── */
     #contact {
@@ -831,7 +901,9 @@
       opacity: 0.05;
     }
 
-    .contact-link:hover::before { transform: translateX(0); }
+    .contact-link:hover::before {
+      transform: translateX(0);
+    }
 
     .contact-link:hover {
       color: var(--accent);
@@ -889,18 +961,39 @@
 
     /* ─── ANIMATIONS ─────────────────────────────────── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; transform: scaleY(1); }
-      50%       { opacity: 1;   transform: scaleY(1.08); }
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scaleY(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1.08);
+      }
     }
 
     /* ─── REVEAL ON SCROLL ───────────────────────────── */
@@ -926,11 +1019,21 @@
 
     /* ─── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 900px) {
-      nav { padding: 1.1rem 1.5rem; }
-      .nav-links { display: none; }
+      nav {
+        padding: 1.1rem 1.5rem;
+      }
 
-      #hero { padding: 7rem 1.5rem 4rem; }
-      .hero-scroll { right: 1.5rem; }
+      .nav-links {
+        display: none;
+      }
+
+      #hero {
+        padding: 7rem 1.5rem 4rem;
+      }
+
+      .hero-scroll {
+        right: 1.5rem;
+      }
 
       #about {
         grid-template-columns: 1fr;
@@ -942,8 +1045,15 @@
         padding: 5rem 1.5rem;
       }
 
-      .projects-grid { grid-template-columns: 1fr; }
-      .projects-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
 
       #contact {
         grid-template-columns: 1fr;
@@ -963,7 +1073,9 @@
         right: -0.5rem;
       }
 
-      .stats-row { overflow-x: auto; }
+      .stats-row {
+        overflow-x: auto;
+      }
     }
   </style>
 </head>
@@ -1000,7 +1112,8 @@
       <div class="status-dot"></div>
       <span>Available for opportunities</span>
     </div>
-    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Software Developer &amp; Designer &amp; Open Source Contributor &amp; Java Enthusiast</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Software Developer &amp; Designer &amp; Open Source Contributor
+      &amp; Java Enthusiast</p>
     <h1 class="hero-name">
       Gani<br>
       <span class="hero-name-outline" data-i18n="hero_surname">Gurgah</span>
@@ -1030,7 +1143,10 @@
         things.
       </h2>
       <p class="about-text" data-i18n="about_text">
-        I work in software development and user experience design. I am passionate about writing clean code and creating intuitive interfaces. I also have experience in test-driven software development. An application that hasn't been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and aesthetic quality.
+        I work in software development and user experience design. I am passionate about writing clean code and creating
+        intuitive interfaces. I also have experience in test-driven software development. An application that hasn't
+        been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and
+        aesthetic quality.
       </p>
       <div class="stats-row">
         <div class="stat-item">
@@ -1099,25 +1215,36 @@
         <div class="section-label" data-i18n="projects_label">Projects</div>
         <h2 class="projects-heading" data-i18n="projects_heading">Selected Works</h2>
       </div>
-      <a href="https://github.com/ganigurgah" target="_blank" class="btn btn-outline" data-i18n="projects_github_btn">GitHub →</a>
+      <a href="https://github.com/ganigurgah" target="_blank" class="btn btn-outline"
+        data-i18n="projects_github_btn">GitHub →</a>
     </div>
 
     <div class="projects-grid reveal">
       <!-- Project 1 -->
       <div class="project-card">
         <div class="project-label">
-          <span>DbBundle</span>
+          <span>Archon</span>
           <span class="project-label-index">01 / 03</span>
         </div>
-        <h4 class="project-title" data-i18n="project1_title">Database-Based Resource Bundle Library</h4>
-        <p class="project-desc" data-i18n="project1_desc">DbBundle is a Maven library that provides database-based ResourceBundle management for multi-language support in Spring Boot and JSF applications. It offers performance optimization with Caffeine cache.</p>
+        <h4 class="project-title" data-i18n="project1_title">Archon — Project-Specific AI Software Architect Assistant
+        </h4>
+        <p class="project-desc" data-i18n="project1_desc">Archon is a fully self-hosted AI assistant covering the entire
+          software development lifecycle (analysis → development → testing → maintenance). Instead of generic LLM
+          answers, it generates responses from your project's own source code and documentation.<br><br>🗂️
+          Project-Based RAG — Each project has its own vector collection<br>🎯 Domain Adaptation — QLoRA fine-tuning
+          from source code directly<br>📦 Model Registry — Versioning and automatic model routing<br>🤖 Automated PR
+          Review — GitHub/GitLab/Bitbucket webhook support<br>🛠️ AI-SDLC Tools — Review, test stubs, onboarding, tech
+          debt reports<br>🔒 Governance — Department-level quotas and full audit log</p>
         <div class="project-tags">
-          <span class="tag">Java</span>
-          <span class="tag" data-i18n="project_tag_db">Any Database You Use</span>
-          <span class="tag">Maven</span>
+          <span class="tag">Java 21</span>
+          <span class="tag">Spring AI</span>
+          <span class="tag">Python</span>
+          <span class="tag">Ollama</span>
+          <span class="tag">RAG</span>
         </div>
-        <a href="https://github.com/ganigurgah/dbbundle" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="view_on_github">
-          View on GitHub
+        <a href="https://ganigurgah.github.io/archon-info/" target="_blank" rel="noopener noreferrer"
+          class="project-link" data-i18n="project1_link">
+          Explore Project
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" />
           </svg>
@@ -1130,14 +1257,21 @@
           <span>Marketplace SDK</span>
           <span class="project-label-index">02 / 03</span>
         </div>
-        <h4 class="project-title" data-i18n="project2_title">Java SDK for no-code integration with e-commerce platforms</h4>
-        <p class="project-desc" data-i18n="project2_desc">Innovative Java SDK for Turkey's e-commerce ecosystem (Trendyol, Hepsiburada, N11, Amazon TR). Configuration-driven architecture allowing instant adaptation to API changes by updating YAML.<br><br>🔌 Config-Driven: Every marketplace defined via YAML<br>🔄 Hot-Reload: Changes take effect without restart<br>🪝 Webhook: Standardized push events<br>🖥️ Admin Dashboard: Embedded web UI<br>🏗️ Framework Agnostic: Spring, Quarkus or Pure Java<br><br>✨ <span data-i18n="project_opensource">Open Source Forever</span></p>
+        <h4 class="project-title" data-i18n="project2_title">Java SDK for no-code integration with e-commerce platforms
+        </h4>
+        <p class="project-desc" data-i18n="project2_desc">Innovative Java SDK for Turkey's e-commerce ecosystem
+          (Trendyol, Hepsiburada, N11, Amazon TR). Configuration-driven architecture allowing instant adaptation to API
+          changes by updating YAML.<br><br>🔌 Config-Driven: Every marketplace defined via YAML<br>🔄 Hot-Reload:
+          Changes take effect without restart<br>🪝 Webhook: Standardized push events<br>🖥️ Admin Dashboard: Embedded
+          web UI<br>🏗️ Framework Agnostic: Spring, Quarkus or Pure Java<br><br>✨ <span
+            data-i18n="project_opensource">Open Source Forever</span></p>
         <div class="project-tags">
           <span class="tag">Java</span>
           <span class="tag">YAML</span>
           <span class="tag">Open Source</span>
         </div>
-        <a href="https://github.com/ganigurgah/marketplace-sdk" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="view_on_github">
+        <a href="https://github.com/ganigurgah/marketplace-sdk" target="_blank" rel="noopener noreferrer"
+          class="project-link" data-i18n="view_on_github">
           View on GitHub
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" />
@@ -1152,13 +1286,16 @@
           <span class="project-label-index">03 / 03</span>
         </div>
         <h4 class="project-title" data-i18n="project3_title">Your Personal Siri</h4>
-        <p class="project-desc" data-i18n="project3_desc">PCU (Personal Computer User) is a next-gen autonomous assistant that lets you manage your computer with natural language, merging local and cloud AI models. It's an intelligent layer over your OS.</p>
+        <p class="project-desc" data-i18n="project3_desc">PCU (Personal Computer User) is a next-gen autonomous
+          assistant that lets you manage your computer with natural language, merging local and cloud AI models. It's an
+          intelligent layer over your OS.</p>
         <div class="project-tags">
           <span class="tag">Python</span>
           <span class="tag">AI</span>
           <span class="tag">LLM</span>
         </div>
-        <a href="https://github.com/ganigurgah/pcu_release" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="view_on_github">
+        <a href="https://github.com/ganigurgah/pcu_release" target="_blank" rel="noopener noreferrer"
+          class="project-link" data-i18n="view_on_github">
           View on GitHub
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" />
@@ -1226,14 +1363,14 @@
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;
       cursor.style.left = mx - 4 + 'px';
-      cursor.style.top  = my - 4 + 'px';
+      cursor.style.top = my - 4 + 'px';
     });
 
     (function animRing() {
       rx += (mx - rx) * 0.11;
       ry += (my - ry) * 0.11;
       ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
+      ring.style.top = ry + 'px';
       requestAnimationFrame(animRing);
     })();
 
@@ -1289,10 +1426,10 @@
         projects_label: "Projeler",
         projects_heading: "Seçili Çalışmalar",
         projects_github_btn: "GitHub →",
-        project1_title: "Database Tabanlı Kaynak Paketi Kütüphanesi",
-        project1_desc: "DbBundle, Spring Boot ve JSF uygulamalarında çoklu dil desteği için database tabanlı ResourceBundle yönetimi sağlayan bir Maven kütüphanesidir. Caffeine cache ile performans optimizasyonu sunar.",
-        project_tag_db: "Kullandığınız Veritabanı",
+        project1_title: "Archon — Projeye Özel AI Yazılım Mimarı Asistanı",
+        project1_desc: "Archon, yazılım geliştirme sürecinin tamamını (analiz → geliştirme → test → bakım) kapsayan, tamamen self-hosted çalışan bir AI asistanıdır. Genel amaçlı LLM'lerin \"genel bilgi\" vereceği yerde, sizin projenizin kaynak kodu ve belgelerinden cevap üretir.<br><br>🗂️ Proje bazlı RAG — Her proje ayrı vektör koleksiyonuna sahip<br>🎯 Domain Adaptation — Kaynak koddan QLoRA fine-tuning<br>📦 Model Registry — Versiyonlama ve otomatik yönlendirme<br>🤖 Otomatik PR Review — GitHub/GitLab/Bitbucket webhook desteği<br>🛠️ AI-SDLC Araçları — Review, test stub, onboarding, teknik borç raporu<br>🔒 Governance — Departman bazlı quota ve tam audit log",
         view_on_github: "GitHub'da Gör",
+        project1_link: "Projeyi İncele",
         project2_title: "Türkiye'nin en büyük e-ticaret platformlarına no-code entegrasyon için Java SDK",
         project2_desc: "Türkiye e-ticaret ekosistemi (Trendyol, Hepsiburada, N11, Amazon TR) için konfigürasyon odaklı, yenilikçi Java SDK. API değişikliklerinde koda dokunmadan sadece YAML güncelleyerek anında adaptasyon sağlar.<br><br>🔌 Config-Driven: Her pazaryeri YAML ile tanımlanır<br>🔄 Hot-Reload: YAML değişikliği anında devreye girer<br>🪝 Webhook: Push olaylarını normalize eder<br>🖥️ Admin Dashboard: Gömülü web UI<br>🏗️ Framework Bağımsız: Spring veya Quarkus<br><br>✨ <span data-i18n=\"project_opensource\">Sonsuza kadar OpenSource</span>",
         project_opensource: "Sonsuza kadar OpenSource",
@@ -1330,10 +1467,10 @@
         projects_label: "Projects",
         projects_heading: "Selected Works",
         projects_github_btn: "GitHub →",
-        project1_title: "Database-Based Resource Bundle Library",
-        project1_desc: "DbBundle is a Maven library that provides database-based ResourceBundle management for multi-language support in Spring Boot and JSF applications. It offers performance optimization with Caffeine cache.",
-        project_tag_db: "Any Database You Use",
+        project1_title: "Archon — Project-Specific AI Software Architect Assistant",
+        project1_desc: "Archon is a fully self-hosted AI assistant covering the entire software development lifecycle (analysis → development → testing → maintenance). Instead of generic LLM answers, it generates responses from your project's own source code and documentation.<br><br>🗂️ Project-Based RAG — Each project has its own vector collection<br>🎯 Domain Adaptation — QLoRA fine-tuning from source code directly<br>📦 Model Registry — Versioning and automatic model routing<br>🤖 Automated PR Review — GitHub/GitLab/Bitbucket webhook support<br>🛠️ AI-SDLC Tools — Review, test stubs, onboarding, tech debt reports<br>🔒 Governance — Department-level quotas and full audit log",
         view_on_github: "View on GitHub",
+        project1_link: "Explore Project",
         project2_title: "Java SDK for no-code integration with e-commerce platforms",
         project2_desc: "Innovative Java SDK for Turkey's e-commerce ecosystem (Trendyol, Hepsiburada, N11, Amazon TR). Configuration-driven architecture allowing instant adaptation to API changes by updating YAML.<br><br>🔌 Config-Driven: Every marketplace defined via YAML<br>🔄 Hot-Reload: Changes take effect without restart<br>🪝 Webhook: Standardized push events<br>🖥️ Admin Dashboard: Embedded web UI<br>🏗️ Framework Agnostic: Spring, Quarkus or Pure Java<br><br>✨ <span data-i18n=\"project_opensource\">Open Source Forever</span>",
         project_opensource: "Open Source Forever",
@@ -1377,9 +1514,9 @@
     // ─── VISITOR COUNTER ──────────────────────────────
     async function updateCounter() {
       try {
-        const res  = await fetch('https://api.counterapi.dev/v2/gani-gurgahs-team-3886/first-counter-3886/up');
+        const res = await fetch('https://api.counterapi.dev/v2/gani-gurgahs-team-3886/first-counter-3886/up');
         const data = await res.json();
-        const el   = document.getElementById('counter');
+        const el = document.getElementById('counter');
         if (el && data?.data?.up_count) {
           el.textContent = data.data.up_count.toLocaleString();
         }
@@ -1390,4 +1527,5 @@
     updateCounter();
   </script>
 </body>
+
 </html>
