@@ -1,1546 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gani Gurgah — Portfolio</title>
-  <meta name="description"
-    content="Gani Gurgah - Software Developer, Designer and Open Source Contributor. Building digital experiences with Java, Delphi and modern web technologies." />
-  <meta name="keywords"
-    content="Gani Gurgah, Software Developer, Java Developer, Delphi, Open Source, Portfolio, Web Design" />
-  <meta name="author" content="Gani Gurgah" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ganigurgah.github.io/" />
-  <meta property="og:title" content="Gani Gurgah — Portfolio" />
-  <meta property="og:description" content="Bridging the gap between code and ideas, building digital experiences." />
-  <meta property="og:image" content="https://ganigurgah.github.io/og-image.png" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://ganigurgah.github.io/" />
-  <meta property="twitter:title" content="Gani Gurgah — Portfolio" />
-  <meta property="twitter:description"
-    content="Bridging the gap between code and ideas, building digital experiences." />
-  <meta property="twitter:image" content="https://ganigurgah.github.io/og-image.png" />
-
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23c8f542%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-family=%22Syne, sans-serif%22 font-weight=%22800%22 font-size=%2260%22 fill=%22%230a0a0f%22>G</text></svg>">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap"
-    rel="stylesheet">
-
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg: #080810;
-      --surface: #0f0f1a;
-      --surface2: #13131f;
-      --border: #1a1a2e;
-      --border2: #252538;
-      --accent: #c8f542;
-      --accent-dim: rgba(200, 245, 66, 0.12);
-      --accent2: #7b5ea7;
-      --text: #eeeef8;
-      --text2: #a8a8c0;
-      --muted: #58587a;
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'Bricolage Grotesque', sans-serif;
-      --font-mono: 'DM Mono', monospace;
-      --radius: 3px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* ─── CUSTOM CURSOR ─────────────────────────────── */
-    .cursor {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.12s ease, opacity 0.3s;
-      mix-blend-mode: difference;
-    }
-
-    .cursor-ring {
-      position: fixed;
-      width: 32px;
-      height: 32px;
-      border: 1px solid rgba(200, 245, 66, 0.6);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transition: transform 0.38s cubic-bezier(.16, 1, .3, 1), width 0.3s, height 0.3s, border-color 0.3s;
-      transform: translate(-50%, -50%);
-    }
-
-    .cursor-ring.hover {
-      width: 56px;
-      height: 56px;
-      border-color: var(--accent);
-    }
-
-    /* ─── BACKGROUND LAYERS ─────────────────────────── */
-    /* Noise */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.4;
-    }
-
-    /* Subtle grid */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(200, 245, 66, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200, 245, 66, 0.025) 1px, transparent 1px);
-      background-size: 72px 72px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Ambient glow top-left */
-    .glow-orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(120px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .glow-orb-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(200, 245, 66, 0.06) 0%, transparent 70%);
-      top: -200px;
-      left: -200px;
-    }
-
-    .glow-orb-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(123, 94, 167, 0.07) 0%, transparent 70%);
-      bottom: 10%;
-      right: -100px;
-    }
-
-    /* ─── NAV ───────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 4rem;
-      transition: background 0.4s, border-color 0.4s;
-      border-bottom: 1px solid transparent;
-    }
-
-    nav.scrolled {
-      background: rgba(8, 8, 16, 0.88);
-      backdrop-filter: blur(20px) saturate(1.5);
-      -webkit-backdrop-filter: blur(20px) saturate(1.5);
-      border-color: var(--border);
-    }
-
-    .nav-logo {
-      font-size: 0.9rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      text-decoration: none;
-      font-family: var(--font-mono);
-      position: relative;
-    }
-
-    .nav-logo::after {
-      content: '_';
-      animation: blink 1.2s step-end infinite;
-      color: var(--accent);
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-family: var(--font-mono);
-      transition: color 0.2s;
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      border: 1px solid var(--border2);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .lang-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      cursor: none;
-      padding: 0.3rem 0.6rem;
-      transition: background 0.2s, color 0.2s;
-      letter-spacing: 0.1em;
-    }
-
-    .lang-btn:hover {
-      color: var(--text);
-    }
-
-    .lang-btn.active {
-      background: var(--accent);
-      color: #080810;
-      font-weight: 700;
-    }
-
-    /* ─── SECTIONS ──────────────────────────────────── */
-    section {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ─── HERO ──────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 9rem 4rem 5rem;
-      overflow: hidden;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.15s forwards;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .hero-name {
-      font-size: clamp(4.5rem, 13vw, 11rem);
-      font-weight: 800;
-      line-height: 0.88;
-      letter-spacing: -0.04em;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.3s forwards;
-      font-family: var(--font-display);
-    }
-
-    .hero-name-outline {
-      display: block;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(200, 245, 66, 0.35);
-      transition: -webkit-text-stroke-color 0.3s;
-    }
-
-    .hero-name-outline:hover {
-      -webkit-text-stroke-color: rgba(200, 245, 66, 0.8);
-    }
-
-    .hero-tagline {
-      margin-top: 3.5rem;
-      max-width: 480px;
-      color: var(--text2);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      font-family: var(--font-body);
-      font-weight: 300;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.48s forwards;
-      border-left: 1px solid var(--border2);
-      padding-left: 1.5rem;
-    }
-
-    .hero-cta {
-      margin-top: 3rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.62s forwards;
-    }
-
-    /* ─── BUTTONS ───────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.8rem;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      cursor: none;
-      border-radius: var(--radius);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #080810;
-      font-weight: 600;
-    }
-
-    .btn-primary::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: white;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(200, 245, 66, 0.25);
-    }
-
-    .btn-primary:hover::after {
-      opacity: 0.1;
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border2);
-      color: var(--text2);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-      background: var(--accent-dim);
-    }
-
-    a:focus-visible,
-    button:focus-visible,
-    .btn:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    /* Hero scroll indicator */
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      right: 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      opacity: 0;
-      animation: fadeIn 1s 1.3s forwards;
-    }
-
-    .hero-scroll-line {
-      width: 1px;
-      height: 56px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: scrollPulse 2s 1.5s infinite;
-    }
-
-    /* Big decorative number */
-    .hero-number {
-      position: absolute;
-      right: -1rem;
-      bottom: 2rem;
-      font-size: clamp(10rem, 22vw, 20rem);
-      font-weight: 800;
-      color: transparent;
-      -webkit-text-stroke: 1px var(--border2);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-      opacity: 0;
-      animation: fadeIn 1.2s 0.9s forwards;
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* ─── STATUS BADGE ──────────────────────────────── */
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.8rem;
-      background: rgba(200, 245, 66, 0.08);
-      border: 1px solid rgba(200, 245, 66, 0.2);
-      border-radius: 100px;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.05s forwards;
-    }
-
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        box-shadow: 0 0 0 0 rgba(200, 245, 66, 0.4);
-      }
-
-      50% {
-        opacity: 0.7;
-        box-shadow: 0 0 0 4px rgba(200, 245, 66, 0);
-      }
-    }
-
-    /* ─── ABOUT ─────────────────────────────────────── */
-    #about {
-      padding: 9rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7rem;
-      align-items: start;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--accent);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 20px;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .about-heading {
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      font-family: var(--font-display);
-    }
-
-    .about-heading em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .about-text {
-      color: var(--text2);
-      line-height: 1.85;
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 1rem;
-      margin-top: 2rem;
-    }
-
-    /* Stats */
-    .stats-row {
-      display: flex;
-      gap: 0;
-      margin-top: 3rem;
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .stat-item {
-      flex: 1;
-      padding: 1.5rem 1.2rem;
-      border-right: 1px solid var(--border2);
-      position: relative;
-    }
-
-    .stat-item:last-child {
-      border-right: none;
-    }
-
-    .stat-item::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 0;
-      background: var(--accent);
-      transition: width 0.5s ease;
-    }
-
-    .stat-item:hover::before {
-      width: 100%;
-    }
-
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-    }
-
-    .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--muted);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-top: 0.4rem;
-    }
-
-    /* Skills */
-    .about-right {
-      padding-top: 1.5rem;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-top: 1.5rem;
-    }
-
-    .skill-item {
-      background: var(--surface);
-      padding: 1.1rem 1.3rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text2);
-      transition: background 0.25s, color 0.25s;
-      position: relative;
-      cursor: none;
-    }
-
-    .skill-item::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 0;
-      background: var(--accent);
-      opacity: 0.08;
-      transition: width 0.3s ease;
-    }
-
-    .skill-item:hover {
-      color: var(--accent);
-      background: var(--surface2);
-    }
-
-    .skill-item:hover::after {
-      width: 100%;
-    }
-
-    .skill-name {
-      display: block;
-      font-weight: 400;
-      font-size: 0.82rem;
-    }
-
-    .skill-level {
-      display: block;
-      font-size: 0.62rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-      opacity: 0.7;
-    }
-
-    .skill-level a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .skill-level a:hover {
-      color: var(--accent);
-    }
-
-    /* ─── PROJECTS ──────────────────────────────────── */
-    #projects {
-      padding: 9rem 4rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .projects-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
-    }
-
-    .projects-heading {
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      font-family: var(--font-display);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .project-card {
-      background: var(--surface);
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-      cursor: none;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.25rem;
-      margin-top: 1.25rem;
-      margin-left: 1.25rem;
-      margin-right: 1.25rem;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-
-    .project-card:hover {
-      background: var(--surface2);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-label {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--accent);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0.7;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .project-label-index {
-      color: var(--muted);
-      opacity: 0.5;
-    }
-
-    .project-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-      font-family: var(--font-display);
-    }
-
-    .project-desc {
-      color: var(--text2);
-      font-family: var(--font-body);
-      font-size: 0.92rem;
-      line-height: 1.75;
-      font-weight: 300;
-      flex-grow: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1.8rem;
-    }
-
-    .tag {
-      padding: 0.2rem 0.65rem;
-      border: 1px solid var(--border2);
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--muted);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .project-card:hover .tag {
-      border-color: rgba(200, 245, 66, 0.25);
-      color: var(--text2);
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 2rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.12em;
-      opacity: 0.55;
-      transform: translateY(0);
-      transition: opacity 0.25s, transform 0.25s;
-    }
-
-    .project-card:hover .project-link {
-      opacity: 1;
-    }
-
-    .project-link:hover {
-      transform: translateY(-2px);
-    }
-
-    .project-link svg {
-      transition: transform 0.2s;
-    }
-
-    .project-link:hover svg {
-      transform: translate(3px, -3px);
-    }
-
-    /* ─── CONTACT ───────────────────────────────────── */
-    #contact {
-      padding: 9rem 4rem;
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7rem;
-      align-items: center;
-    }
-
-    .contact-heading {
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      font-family: var(--font-display);
-    }
-
-    .contact-heading span {
-      display: block;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(200, 245, 66, 0.3);
-    }
-
-    .contact-sub {
-      margin-top: 2rem;
-      color: var(--text2);
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 1.8rem;
-      text-decoration: none;
-      color: var(--text);
-      font-family: var(--font-mono);
-      transition: all 0.25s;
-      cursor: none;
-      background: var(--surface);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-link::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--accent);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      opacity: 0.05;
-    }
-
-    .contact-link:hover::before {
-      transform: translateX(0);
-    }
-
-    .contact-link:hover {
-      color: var(--accent);
-      padding-left: 2.3rem;
-    }
-
-    .contact-link-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-link-value {
-      font-size: 0.95rem;
-      font-family: var(--font-body);
-    }
-
-    .contact-link-arrow {
-      font-size: 1rem;
-      opacity: 0.5;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .contact-link:hover .contact-link-arrow {
-      opacity: 1;
-      transform: translateX(4px);
-    }
-
-    /* ─── FOOTER ────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.8rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
-    }
-
-    .footer-counter {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .footer-counter-value {
-      color: var(--accent);
-      font-weight: 400;
-    }
-
-    /* ─── ANIMATIONS ─────────────────────────────────── */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes scrollPulse {
-
-      0%,
-      100% {
-        opacity: 0.3;
-        transform: scaleY(1);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scaleY(1.08);
-      }
-    }
-
-    /* ─── REVEAL ON SCROLL ───────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.85s ease, transform 0.85s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ─── DIVIDER LINE ───────────────────────────────── */
-    .section-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
-      opacity: 0.2;
-      margin: 0;
-    }
-
-    /* ─── RESPONSIVE ─────────────────────────────────── */
-    @media (max-width: 900px) {
-      nav {
-        padding: 1.1rem 1.5rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      #hero {
-        padding: 7rem 1.5rem 4rem;
-      }
-
-      .hero-scroll {
-        right: 1.5rem;
-      }
-
-      #about {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 5rem 1.5rem;
-      }
-
-      #projects {
-        padding: 5rem 1.5rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-      }
-
-      #contact {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 5rem 1.5rem;
-      }
-
-      footer {
-        padding: 1.5rem;
-        flex-direction: column;
-        gap: 0.8rem;
-        text-align: center;
-      }
-
-      .hero-number {
-        font-size: 9rem;
-        right: -0.5rem;
-      }
-
-      .stats-row {
-        overflow-x: auto;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gani Gürgah - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ─── NAVIGATION ────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .nav-logo {
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: monospace;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #90cdf4;
+        }
+
+        /* ─── CONTAINER & SECTIONS ──────────────────────── */
+        .container {
+            max-width: 900px;
+            margin: 100px auto 40px auto; /* Navigasyon binişini engellemek için margin artırıldı */
+            background: #ffffff;
+            padding: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        .header-title h1 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-title h2 {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin: 0 0 15px 0;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-info a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        section {
+            margin-bottom: 45px;
+        }
+
+        h3.section-title {
+            font-size: 20px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-text {
+            font-size: 15px;
+            text-align: justify;
+            color: #4a5568;
+        }
+
+        /* ─── SKILLS GRID ───────────────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-category h4 {
+            margin: 0 0 8px 0;
+            color: var(--primary-color);
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-category p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* ─── FEATURED PROJECTS ────────────────────────── */
+        .project-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .project-link {
+            font-size: 13px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-card ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .project-card li {
+            margin-bottom: 6px;
+        }
+
+        /* ─── OPEN SOURCE CONTRIBUTIONS ────────────────── */
+        .oss-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .oss-card {
+            border: 1px dashed var(--secondary-color);
+            padding: 15px;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .oss-card h4 {
+            margin: 0 0 8px 0;
+            color: var(--primary-color);
+            font-size: 15px;
+        }
+
+        .oss-card p {
+            margin: 0;
+            font-size: 13.5px;
+            color: #4a5568;
+        }
+
+        /* ─── PROFESSIONAL EXPERIENCES (REVAMPED) ──────── */
+        .exp-group {
+            background: #ffffff;
+            border-left: 4px solid var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 25px;
+            padding: 22px 25px;
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .exp-group:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .group-title {
+            font-size: 1.15rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .group-title i {
+            color: var(--secondary-color);
+        }
+
+        .exp-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .exp-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .exp-list li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .exp-list strong {
+            color: #1a202c;
+            font-weight: 600;
+        }
+
+        /* ─── FOOTER ────────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 20px 0 0 0;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-light);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-counter {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-counter-value {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* ─── RESPONSIVE LAYOUTS ────────────────────────── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            .container {
+                padding: 20px;
+                margin-top: 80px;
+            }
+            .skills-grid, .oss-container {
+                grid-template-columns: 1fr;
+            }
+            .exp-group {
+                padding: 15px;
+            }
+            .header-title h1 {
+                font-size: 26px;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ─── PRINT OPTIMIZATION ───────────────────────── */
+        @media print {
+            body {
+                background: #ffffff;
+            }
+            nav {
+                display: none;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+            .project-card, .skill-category, .oss-card, .exp-group {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- Ambient glows -->
-  <div class="glow-orb glow-orb-1"></div>
-  <div class="glow-orb glow-orb-2"></div>
-
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-  <!-- NAV -->
-  <nav id="navbar">
-    <a href="#" class="nav-logo">GG</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#about" data-i18n="nav_about">About</a></li>
-        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-      </ul>
-      <div class="lang-switcher">
-        <button onclick="setLanguage('tr')" id="lang-tr" class="lang-btn">TR</button>
-        <button onclick="setLanguage('en')" id="lang-en" class="lang-btn active">EN</button>
-      </div>
+<nav>
+    <a href="#" class="nav-logo">GANIGURGAH</a>
+    <div class="nav-links">
+        <a href="#summary">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#featured-projects">Projects</a>
+        <a href="#experience">Experience</a>
     </div>
-  </nav>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="status-badge">
-      <div class="status-dot"></div>
-      <span>Available for opportunities</span>
-    </div>
-    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Software Developer &amp; Designer &amp; Open Source Contributor
-      &amp; Java Enthusiast</p>
-    <h1 class="hero-name">
-      Gani<br>
-      <span class="hero-name-outline" data-i18n="hero_surname">Gurgah</span>
-    </h1>
-    <p class="hero-tagline" data-i18n="hero_tagline">
-      Bridging the gap between code and ideas,<br>
-      building digital experiences.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">View Projects</a>
-      <a href="#contact" class="btn btn-outline" data-i18n="hero_btn_contact">Get in Touch</a>
-    </div>
-    <div class="hero-number">01</div>
-    <div class="hero-scroll">
-      <span data-i18n="hero_scroll">Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
-  </section>
+<div class="container">
+    <header>
+        <div class="header-title">
+            <h1>Gani Gürgah</h1>
+            <h2>Senior Java Engineer | Generative AI & RAG Specialist | Apache NetBeans Contributor</h2>
+        </div>
+        <div class="contact-info">
+            <div class="contact-info">
+                <span>📍 Istanbul, Turkey</span>
+                <span>📞 +90 506 649 24 33</span>
+                <span><i class="fas fa-envelope" style="color: #ea4335; font-size: 14px;"></i> <a href="mailto:ganigurgah@gmail.com">Email</a></span>
+                <span><i class="fab fa-linkedin" style="color: #0a66c2; font-size: 15px;"></i> <a href="https://linkedin.com/in/ganigurgah" target="_blank">LinkedIn</a></span>
+                <span><i class="fab fa-github" style="color: #24292f; font-size: 15px;"></i> <a href="https://github.com/ganigurgah/" target="_blank">GitHub</a></span>
+            </div>
+        </div>
+    </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="reveal">
-      <div class="section-label" data-i18n="about_label">About Me</div>
-      <h2 class="about-heading" data-i18n="about_heading">
-        I love building<br>
-        <em>beautiful</em><br>
-        things.
-      </h2>
-      <p class="about-text" data-i18n="about_text">
-        I work in software development and user experience design. I am passionate about writing clean code and creating
-        intuitive interfaces. I also have experience in test-driven software development. An application that hasn't
-        been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and
-        aesthetic quality. Lately, I've been deeply focused on practical AI engineering — building Archon, a self-hosted
-        AI assistant that brings RAG and fine-tuning directly into the software development lifecycle, and PCU, an
-        autonomous OS-layer agent driven by natural language. I believe AI is most powerful when it's grounded in your
-        own context, not generic answers.
-      </p>
-      <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-value" id="years-experience"></div>
-          <div class="stat-label" data-i18n="stats_years">Years Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">50+</div>
-          <div class="stat-label" data-i18n="stats_projects">Projects</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">∞</div>
-          <div class="stat-label" data-i18n="stats_caffeine">Caffeine</div>
-        </div>
-      </div>
-    </div>
+    <section id="summary">
+        <h3 class="section-title">Professional Summary</h3>
+        <p class="summary-text">
+            High-impact Technical Engineer with 15+ years of enterprise Java development experience combined with production-ready Generative AI and RAG system integrations (LangChain4j, ChromaDB, Ollama). Specializing in bridging the gap between robust, mission-critical legacy systems (Delphi, PL/SQL, Oracle) and cutting-edge Sovereign AI (Local/On-Prem LLM) architectures. Proven track record of spearheading large-scale core migrations, microservices transformations, and secure AI-native automation pipelines within highly regulated sectors like healthcare and insurance, prioritizing strict Data Privacy and 0-TL licensing overhead.
+        </p>
+    </section>
 
-    <div class="about-right reveal">
-      <div class="section-label" data-i18n="about_skills_label">Technologies</div>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <span class="skill-name">Java</span>
-          <span class="skill-level">Spring · Primefaces · BootsFaces</span>
+    <section id="skills">
+        <h3 class="section-title">Core Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4><i class="fas fa-microchip"></i> AI & RAG Architecture</h4>
+                <p>Generative AI, RAG Architectures, Local LLM Integration (Ollama), LangChain4j, Vector Databases (ChromaDB), Semantic Search, Quantization, Data Privacy Assurance</p>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-code"></i> Backend & Enterprise Java</h4>
+                <p>Java Core, Java EE, Jakarta EE, Spring Boot, Spring Framework, Spring AI, Microservices, RESTful APIs, SOAP, Delphi, C#, Python</p>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-database"></i> Database & Advanced Querying</h4>
+                <p>Oracle DB, PL/SQL Architectures, PostgreSQL, MySQL, MS SQL, Database Performance Optimization, High-Volume Data Migration</p>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-cubes"></i> Architecture & Infrastructure</h4>
+                <p>Event-Driven Architecture, Microservices Transformation, Docker, Multi-tenancy, On-Premises Deployment, RabbitMQ, Kafka, WebLogic, WebSphere</p>
+            </div>
         </div>
-        <div class="skill-item">
-          <span class="skill-name">JavaScript</span>
-          <span class="skill-level">Core Syntax</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Delphi</span>
-          <span class="skill-level">Delphi 7 to 13</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">PL/SQL</span>
-          <span class="skill-level">Oracle</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">DevOps</span>
-          <span class="skill-level">Docker · CI/CD</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">IDE</span>
-          <span class="skill-level">
-            <a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ</a> ·
-            <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> ·
-            <a href="https://www.embarcadero.com/" target="_blank">Delphi</a> ·
-            <a href="https://netbeans.apache.org/" target="_blank">Netbeans</a>
-          </span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Database</span>
-          <span class="skill-level">Oracle · PostgreSQL · MongoDB</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Mobile</span>
-          <span class="skill-level">Kotlin</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="projects-header reveal">
-      <div>
-        <div class="section-label" data-i18n="projects_label">Projects</div>
-        <h2 class="projects-heading" data-i18n="projects_heading">Selected Works</h2>
-      </div>
-      <a href="https://github.com/ganigurgah" target="_blank" class="btn btn-outline"
-        data-i18n="projects_github_btn">GitHub →</a>
-    </div>
+    <section id="featured-projects">
+        <h3 class="section-title">Featured Projects</h3>
 
-    <div class="projects-grid reveal">
-      <!-- Project 1 -->
-      <div class="project-card">
-        <div class="project-label">
-          <span>Archon</span>
-          <span class="project-label-index">01 / 03</span>
+        <div class="project-card">
+            <div class="project-header">
+                <h4 class="project-title">Archon - AI-Driven SDLC Automation Control Plane</h4>
+                <a href="https://ganigurgah.github.io/archon-info/" class="project-link" target="_blank">Project Link &rarr;</a>
+            </div>
+            <ul>
+                <li>Architected and developed a private, secure, local hybrid AI control plane designed to orchestrate automated technical decision-making and streamline the Software Development Life Cycle (SDLC) for enterprise repositories.</li>
+                <li>Implemented autonomous local AI agents that ingest and scan codebases (Git repositories or local paths) to generate standard-compliant source code and conduct context-aware automated Code Reviews.</li>
+                <li>Enforced an on-premise, air-gapped deployment strategy using local vector indexing to guarantee strict enterprise Data Privacy, eliminating external API dependency and data leakage risks.</li>
+            </ul>
         </div>
-        <h4 class="project-title" data-i18n="project1_title">Archon — Project-Specific AI Software Architect Assistant
-        </h4>
-        <p class="project-desc" data-i18n="project1_desc">Archon is a fully self-hosted AI assistant covering the entire
-          software development lifecycle (analysis → development → testing → maintenance). Instead of generic LLM
-          answers, it generates responses from your project's own source code and documentation.<br><br>🗂️
-          Project-Based RAG — Each project has its own vector collection<br>🎯 Domain Adaptation — QLoRA fine-tuning
-          from source code directly<br>📦 Model Registry — Versioning and automatic model routing<br>🤖 Automated PR
-          Review — GitHub/GitLab/Bitbucket webhook support<br>🛠️ AI-SDLC Tools — Review, test stubs, onboarding, tech
-          debt reports<br>🔒 Governance — Department-level quotas and full audit log</p>
-        <div class="project-tags">
-          <span class="tag">Java 21</span>
-          <span class="tag">Spring AI</span>
-          <span class="tag">Python</span>
-          <span class="tag">Ollama</span>
-          <span class="tag">RAG</span>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h4 class="project-title">Marketplace Java SDK (Native Java Core)</h4>
+                <a href="https://github.com/ganigurgah/marketplace-sdk" class="project-link" target="_blank">View On GitHub &rarr;</a>
+            </div>
+            <ul>
+                <li>Built a lightweight, zero-dependency native Java SDK providing seamless, no-code synchronization with major e-commerce marketplaces (Trendyol, Hepsiburada, N11, Amazon TR).</li>
+                <li>Created a structure to manage API schema changes using YAML, eliminating binary rebuilds and redeployments.</li>
+            </ul>
         </div>
-        <a href="https://ganigurgah.github.io/archon-info/" target="_blank" rel="noopener noreferrer"
-          class="project-link" data-i18n="project1_link">
-          Explore Project
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" />
-          </svg>
-        </a>
-      </div>
+    </section>
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div class="project-label">
-          <span>Marketplace SDK</span>
-          <span class="project-label-index">02 / 03</span>
+    <section id="open-source">
+        <h3 class="section-title">Open Source Contributions</h3>
+        <div class="oss-container">
+            <div class="oss-card">
+                <h4>🪶 Apache NetBeans Core Contributor</h4>
+                <p>Successfully engineered and contributed the official integration layer to support Oracle WebLogic 14.x and 15.x application servers within the core NetBeans IDE architecture.</p>
+            </div>
+            <div class="oss-card">
+                <h4>🪶 Apache NetBeans Test Contributor</h4>
+                <p>Active participant in testing new core features and security patches in NetBeans IDE before official release cycles.</p>
+            </div>
         </div>
-        <h4 class="project-title" data-i18n="project2_title">Java SDK for no-code integration with e-commerce platforms
-        </h4>
-        <p class="project-desc" data-i18n="project2_desc">Innovative Java SDK for Turkey's e-commerce ecosystem
-          (Trendyol, Hepsiburada, N11, Amazon TR). Configuration-driven architecture allowing instant adaptation to API
-          changes by updating YAML.<br><br>🔌 Config-Driven: Every marketplace defined via YAML<br>🔄 Hot-Reload:
-          Changes take effect without restart<br>🪝 Webhook: Standardized push events<br>🖥️ Admin Dashboard: Embedded
-          web UI<br>🏗️ Framework Agnostic: Spring, Quarkus or Pure Java<br><br>✨ <span
-            data-i18n="project_opensource">Open Source Forever</span></p>
-        <div class="project-tags">
-          <span class="tag">Java</span>
-          <span class="tag">YAML</span>
-          <span class="tag">Open Source</span>
+    </section>
+
+    <section id="experience">
+        <h3 class="section-title">Professional Experiences</h3>
+
+        <div class="exp-group">
+            <h4 class="group-title"><i class="fas fa-brain"></i> AI Engineering & Modern Data Architecture</h4>
+            <ul class="exp-list">
+                <li>Designing and engineering full-stack <strong>AI-Native corporate systems</strong> using Java and Python, focusing on secure local inference models and LLM routing workflows.</li>
+                <li>Architecting production-ready <strong>RAG frameworks</strong> to semantically digest unstructured corporate knowledge bases and feed local LLM agents securely.</li>
+                <li>Deploying and optimizing <strong>ChromaDB vector storage</strong> configurations to execute low-latency semantic search queries and high-density vector embedding lookups.</li>
+            </ul>
         </div>
-        <a href="https://github.com/ganigurgah/marketplace-sdk" target="_blank" rel="noopener noreferrer"
-          class="project-link" data-i18n="view_on_github">
-          View on GitHub
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" />
-          </svg>
-        </a>
-      </div>
 
-      <!-- Project 3 -->
-      <div class="project-card">
-        <div class="project-label">
-          <span>PCU</span>
-          <span class="project-label-index">03 / 03</span>
+        <div class="exp-group">
+            <h4 class="group-title"><i class="fas fa-network-wired"></i> Enterprise Integration & Core Transformation</h4>
+            <ul class="exp-list">
+                <li><strong>Enterprise Integration & Security:</strong> Developed a full-stack integration layer (Java & PL/SQL) enabling seamless "upload-to-policy" conversion for third-party files (Excel, JSON, TXT) from retail partners like <em>MediaMarkt, Turkcell, and Teknosa</em>.</li>
+                <li><strong>Microservices Transformation:</strong> Migrated a high-traffic monolithic core engine to <strong>Spring Boot microservices</strong>, leveraging Apache Zuul for seamless horizontal scaling.</li>
+                <li><strong>High-Performance Optimization:</strong> Refactored bottlenecked database queries and Java layers within critical reporting systems, slashing processing times from <strong>80 seconds down to 3 seconds</strong> (a 96% performance gain).</li>
+                <li><strong>Technical Debt Elimination:</strong> Spearheaded the architectural overhaul and migration of a complex enterprise UI codebase containing thousands of XHTML files from <strong>PrimeFaces 4.1.17 up to PrimeFaces 13</strong> within a rigorous 4-week deadline.</li>
+                <li><strong>Platform Agnosticism:</strong> Decoupled tight WebLogic dependencies, modernizing the application ecosystem to be fully containerized and agnostic across major servers.</li>
+                <li><strong>Vulnerability Mitigation:</strong> Hardened applications against complex Penetration Test flags. Integrated enterprise LDAP, Active Directory, and Certificate-Based authentication protocols.</li>
+                <li>Conducting comprehensive database tuning and performance optimization on legacy relational structures using advanced <strong>PL/SQL algorithms</strong> and indexing strategies.</li>
+            </ul>
         </div>
-        <h4 class="project-title" data-i18n="project3_title">Your Personal Siri</h4>
-        <p class="project-desc" data-i18n="project3_desc">PCU (Personal Computer User) is a next-gen autonomous
-          assistant that lets you manage your computer with natural language, merging local and cloud AI models. It's an
-          intelligent layer over your OS.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">AI</span>
-          <span class="tag">LLM</span>
+
+        <div class="exp-group">
+            <h4 class="group-title"><i class="fas fa-hospital-user"></i> National Healthcare Informatics Systems</h4>
+            <ul class="exp-list">
+                <li>Led full-stack engineering for nationwide health informatics, driving technical decisions to enhance system throughput and reliability.</li>
+                <li>Improved low-latency real-time data sync bridges with the national <strong>e-Nabız registry</strong>, allowing clinicians instantaneous diagnostic data lookups at the point of care.</li>
+                <li>Built a dynamic, multi-tenant Report Marketplace infrastructure allowing healthcare institutions to dynamically toggle and instantiate custom-designed templates on demand.</li>
+                <li>Mitigated billing leakages and compliance risks by refactoring accounting algorithms to maintain 100% synchronization with shifting national healthcare regulations (<strong>SUT</strong>) and the <strong>Medula portal</strong>.</li>
+                <li>Architected high-throughput batch jobs to streamline and prioritize automated e-Nabız data transmissions.</li>
+                <li>Engineered a message-queue backbone using <strong>RabbitMQ</strong> to throttle and manage asynchronous data transmission bursts to external state endpoints.</li>
+                <li>Built a high-speed, lightweight Java data migration utility capable of transferring multi-terabyte healthcare records across differing database formats without causing downtime.</li>
+                <li>Invited by the <strong>Ministry of Health</strong> as a technical expert to deliver official integration workshops and compliance training frameworks to competing enterprise health informatics vendors.</li>
+            </ul>
         </div>
-        <a href="https://github.com/ganigurgah/pcu_release" target="_blank" rel="noopener noreferrer"
-          class="project-link" data-i18n="view_on_github">
-          View on GitHub
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.5" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="reveal">
-      <div class="section-label" data-i18n="contact_label">Contact</div>
-      <h2 class="contact-heading" data-i18n="contact_heading">
-        Let's build<br>
-        <span data-i18n="contact_span">something</span><br>
-        <span data-i18n="contact_span2">together.</span>
-      </h2>
-      <p class="contact-sub" data-i18n="contact_sub">
-        I'm open to new opportunities and collaborations.<br>
-        You can reach me here <span role="img" aria-label="pointing right">👉</span>.
-      </p>
-    </div>
-    <div class="contact-links reveal">
-      <a href="mailto:ganigurgah@gmail.com" class="contact-link">
-        <div>
-          <div class="contact-link-label" data-i18n="contact_email">Email</div>
-          <div class="contact-link-value">ganigurgah@gmail.com</div>
+    <footer>
+        <span>© 2026 Gani Gürgah. All rights reserved.</span>
+        <div class="footer-counter">
+            <span>Visitors:</span>
+            <span class="footer-counter-value" id="counter">—</span>
         </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-      <a href="https://github.com/ganigurgah" target="_blank" class="contact-link">
-        <div>
-          <div class="contact-link-label">GitHub</div>
-          <div class="contact-link-value">github.com/ganigurgah</div>
-        </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-      <a href="https://linkedin.com/in/ganigurgah" target="_blank" class="contact-link">
-        <div>
-          <div class="contact-link-label">LinkedIn</div>
-          <div class="contact-link-value">linkedin.com/in/ganigurgah</div>
-        </div>
-        <span class="contact-link-arrow">→</span>
-      </a>
-    </div>
-  </section>
+        <span>Design &amp; Code — GG</span>
+    </footer>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <span data-i18n="footer_rights">© 2025 Gani Gurgah. All rights reserved.</span>
-    <div class="footer-counter">
-      <span data-i18n="footer_counter">Visitors:</span>
-      <span class="footer-counter-value" id="counter">—</span>
-    </div>
-    <span style="color: var(--accent);" data-i18n="footer_design">Design &amp; Code — GG</span>
-  </footer>
-
-  <script>
-    // ─── CURSOR ───────────────────────────────────────
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursorRing');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx - 4 + 'px';
-      cursor.style.top = my - 4 + 'px';
-    });
-
-    (function animRing() {
-      rx += (mx - rx) * 0.11;
-      ry += (my - ry) * 0.11;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animRing);
-    })();
-
-    document.querySelectorAll('a, button, .skill-item, .project-card, .contact-link').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(2.5)';
-        ring.classList.add('hover');
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        ring.classList.remove('hover');
-      });
-    });
-
-    // ─── NAV SCROLL ───────────────────────────────────
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
-
-    // ─── REVEAL ON SCROLL ─────────────────────────────
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-
-    // ─── TRANSLATIONS ─────────────────────────────────
-    const translations = {
-      tr: {
-        meta_title: "Gani Gurgah — Portfolyo",
-        meta_desc: "Gani Gurgah - Yazılım Geliştirici, Tasarımcı ve OpenSource Katılımcısı. Java, Delphi ve modern web teknolojileri ile dijital deneyimler inşa ediyorum.",
-        nav_about: "Hakkımda",
-        nav_projects: "Projeler",
-        nav_contact: "İletişim",
-        hero_eyebrow: "Yazılım Geliştirici & Tasarımcı & OpenSource Contributor & Java lover",
-        hero_surname: "Gürgah",
-        hero_tagline: "Kod ile fikir arasındaki boşluğu kapatan,<br>dijital deneyimler inşa ediyorum.",
-        hero_btn_projects: "Projeleri Gör",
-        hero_btn_contact: "İletişime Geç",
-        hero_scroll: "Kaydır",
-        about_label: "Hakkımda",
-        about_heading: "Güzel şeyler<br><em>inşa etmeyi</em><br>seviyorum.",
-        about_text: "Yazılım geliştirme ve kullanıcı deneyimi tasarımı üzerine çalışıyorum. Temiz kod yazma ve sezgisel arayüzler oluşturma konusunda tutkum var. Test odaklı yazılım geliştirme konusunda da deneyimliyim. Çok yönlü test edilmemiş bir uygulama potansiyel olarak hatalıdır. Her projede hem teknik mükemmeliyeti hem de estetik kaliteyi bir arada sunmayı hedefliyorum. Son dönemde pratik AI mühendisliğine yoğunlaştım — Archon ile RAG ve fine-tuning'i doğrudan yazılım geliştirme sürecine entegre eden self-hosted bir AI asistanı, PCU ile ise doğal dil komutlarıyla çalışan otonom bir işletim sistemi katmanı inşa ediyorum. AI'ın en güçlü olduğu yer, kendi bağlamınızla çalıştığı yerdir; genel cevaplar değil.",
-        stats_years: "Yıl Prof Deneyim",
-        stats_projects: "Proje",
-        stats_caffeine: "Kafein",
-        about_skills_label: "Teknolojiler",
-        projects_label: "Projeler",
-        projects_heading: "Seçili Çalışmalar",
-        projects_github_btn: "GitHub →",
-        project1_title: "Archon — Projeye Özel AI Yazılım Mimarı Asistanı",
-        project1_desc: "Archon, yazılım geliştirme sürecinin tamamını (analiz → geliştirme → test → bakım) kapsayan, tamamen self-hosted çalışan bir AI asistanıdır. Genel amaçlı LLM'lerin \"genel bilgi\" vereceği yerde, sizin projenizin kaynak kodu ve belgelerinden cevap üretir.<br><br>🗂️ Proje bazlı RAG — Her proje ayrı vektör koleksiyonuna sahip<br>🎯 Domain Adaptation — Kaynak koddan QLoRA fine-tuning<br>📦 Model Registry — Versiyonlama ve otomatik yönlendirme<br>🤖 Otomatik PR Review — GitHub/GitLab/Bitbucket webhook desteği<br>🛠️ AI-SDLC Araçları — Review, test stub, onboarding, teknik borç raporu<br>🔒 Governance — Departman bazlı quota ve tam audit log",
-        view_on_github: "GitHub'da Gör",
-        project1_link: "Projeyi İncele",
-        project2_title: "Türkiye'nin en büyük e-ticaret platformlarına no-code entegrasyon için Java SDK",
-        project2_desc: "Türkiye e-ticaret ekosistemi (Trendyol, Hepsiburada, N11, Amazon TR) için konfigürasyon odaklı, yenilikçi Java SDK. API değişikliklerinde koda dokunmadan sadece YAML güncelleyerek anında adaptasyon sağlar.<br><br>🔌 Config-Driven: Her pazaryeri YAML ile tanımlanır<br>🔄 Hot-Reload: YAML değişikliği anında devreye girer<br>🪝 Webhook: Push olaylarını normalize eder<br>🖥️ Admin Dashboard: Gömülü web UI<br>🏗️ Framework Bağımsız: Spring veya Quarkus<br><br>✨ <span data-i18n=\"project_opensource\">Sonsuza kadar OpenSource</span>",
-        project_opensource: "Sonsuza kadar OpenSource",
-        project3_title: "Bilgisayarınızın Siri'si",
-        project3_desc: "PCU (Personal Computer User), bilgisayarınızı doğal dil komutlarıyla yönetmenizi sağlayan, yerel ve bulut yapay zeka modellerini mükemmel bir uyumla birleştiren yeni nesil bir otonom asistandır. Sadece bir asistan değil, işletim sisteminizin üzerinde dönen akıllı bir katmandır.",
-        contact_label: "İletişim",
-        contact_heading: "Birlikte<br>",
-        contact_span: "bir şeyler",
-        contact_span2: "yapalım.",
-        contact_sub: "Yeni fırsatlara ve işbirliklere açığım.<br>Şuralardan <span role=\"img\" aria-label=\"pointing right\">👉</span> ulaşabilirsiniz.",
-        contact_email: "E-posta",
-        footer_counter: "Ziyaretçi:",
-        footer_rights: "© 2025 Gani Gurgah. Tüm hakları saklıdır.",
-        footer_design: "Tasarım & Kod — GG"
-      },
-      en: {
-        meta_title: "Gani Gurgah — Portfolio",
-        meta_desc: "Gani Gurgah - Software Developer, Designer and Open Source Contributor. Building digital experiences with Java, Delphi and modern web technologies.",
-        nav_about: "About",
-        nav_projects: "Projects",
-        nav_contact: "Contact",
-        hero_eyebrow: "Software Developer & Designer & Open Source Contributor & Java Enthusiast",
-        hero_surname: "Gurgah",
-        hero_tagline: "Bridging the gap between code and ideas,<br>building digital experiences.",
-        hero_btn_projects: "View Projects",
-        hero_btn_contact: "Get in Touch",
-        hero_scroll: "Scroll",
-        about_label: "About Me",
-        about_heading: "I love building<br><em>beautiful</em><br>things.",
-        about_text: "I work in software development and user experience design. I am passionate about writing clean code and creating intuitive interfaces. I also have experience in test-driven software development. An application that hasn't been thoroughly tested is potentially flawed. In every project, I aim to deliver both technical excellence and aesthetic quality. Lately, I've been deeply focused on practical AI engineering — building Archon, a self-hosted AI assistant that brings RAG and fine-tuning directly into the software development lifecycle, and PCU, an autonomous OS-layer agent driven by natural language. I believe AI is most powerful when it's grounded in your own context, not generic answers.",
-        stats_years: "Years Prof Experience",
-        stats_projects: "Projects",
-        stats_caffeine: "Caffeine",
-        about_skills_label: "Technologies",
-        projects_label: "Projects",
-        projects_heading: "Selected Works",
-        projects_github_btn: "GitHub →",
-        project1_title: "Archon — Project-Specific AI Software Architect Assistant",
-        project1_desc: "Archon is a fully self-hosted AI assistant covering the entire software development lifecycle (analysis → development → testing → maintenance). Instead of generic LLM answers, it generates responses from your project's own source code and documentation.<br><br>🗂️ Project-Based RAG — Each project has its own vector collection<br>🎯 Domain Adaptation — QLoRA fine-tuning from source code directly<br>📦 Model Registry — Versioning and automatic model routing<br>🤖 Automated PR Review — GitHub/GitLab/Bitbucket webhook support<br>🛠️ AI-SDLC Tools — Review, test stubs, onboarding, tech debt reports<br>🔒 Governance — Department-level quotas and full audit log",
-        view_on_github: "View on GitHub",
-        project1_link: "Explore Project",
-        project2_title: "Java SDK for no-code integration with e-commerce platforms",
-        project2_desc: "Innovative Java SDK for Turkey's e-commerce ecosystem (Trendyol, Hepsiburada, N11, Amazon TR). Configuration-driven architecture allowing instant adaptation to API changes by updating YAML.<br><br>🔌 Config-Driven: Every marketplace defined via YAML<br>🔄 Hot-Reload: Changes take effect without restart<br>🪝 Webhook: Standardized push events<br>🖥️ Admin Dashboard: Embedded web UI<br>🏗️ Framework Agnostic: Spring, Quarkus or Pure Java<br><br>✨ <span data-i18n=\"project_opensource\">Open Source Forever</span>",
-        project_opensource: "Open Source Forever",
-        project3_title: "Your Personal Siri",
-        project3_desc: "PCU (Personal Computer User) is a next-gen autonomous assistant that lets you manage your computer with natural language, merging local and cloud AI models. It's an intelligent layer over your OS.",
-        contact_label: "Contact",
-        contact_heading: "Let's build<br>",
-        contact_span: "something",
-        contact_span2: "together.",
-        contact_sub: "I'm open to new opportunities and collaborations.<br>You can reach me here <span role=\"img\" aria-label=\"pointing right\">👉</span>.",
-        contact_email: "Email",
-        footer_counter: "Visitors:",
-        footer_rights: "© 2025 Gani Gurgah. All rights reserved.",
-        footer_design: "Design & Code — GG"
-      }
-    };
-
-    function setLanguage(lang) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang]?.[key] !== undefined) {
-          const val = translations[lang][key];
-          if (val.includes('<') || val.includes('&')) {
-            el.innerHTML = val;
-          } else {
-            el.textContent = val;
-          }
-        }
-      });
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('lang-' + lang)?.classList.add('active');
-      document.documentElement.lang = lang;
-      if (translations[lang].meta_title) document.title = translations[lang].meta_title;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc && translations[lang].meta_desc) metaDesc.setAttribute('content', translations[lang].meta_desc);
-      localStorage.setItem('preferredLang', lang);
-    }
-
-    setLanguage(localStorage.getItem('preferredLang') || 'en');
-
+<script>
     // ─── VISITOR COUNTER ──────────────────────────────
     async function updateCounter() {
-      try {
-        const res = await fetch('https://api.counterapi.dev/v2/gani-gurgahs-team-3886/first-counter-3886/up');
-        const data = await res.json();
-        const el = document.getElementById('counter');
-        if (el && data?.data?.up_count) {
-          el.textContent = data.data.up_count.toLocaleString();
+        try {
+            const res = await fetch('https://api.counterapi.dev/v2/gani-gurgahs-team-3886/first-counter-3886/up');
+            const data = await res.json();
+            const el = document.getElementById('counter');
+            if (el && data?.data?.up_count) {
+                el.textContent = data.data.up_count.toLocaleString();
+            }
+        } catch (e) {
+            console.error('Counter error', e);
         }
-      } catch (e) {
-        console.error('Counter error', e);
-      }
     }
     updateCounter();
-
-    const yearsEl = document.getElementById('years-experience');
-    if (yearsEl) {
-      yearsEl.textContent = (new Date().getFullYear() - 2010) + '+';
-    }
-  </script>
+</script>
 </body>
-
 </html>
