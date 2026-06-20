@@ -94,12 +94,12 @@
             text-transform: none;
             letter-spacing: 0.5px;
         }
-
         .header-title h2 {
-            font-size: 18px;
+            font-size: 15.5px;
             color: var(--secondary-color);
             margin: 0 0 15px 0;
             font-weight: 600;
+            letter-spacing: -0.2px;
         }
 
         .contact-info {
@@ -396,13 +396,12 @@
 <body>
 
 <nav>
-    <a href="#" class="nav-logo">GANIGURGAH</a>
+    <a href="#" class="nav-logo">GANI GURGAH</a>
     <div class="nav-links">
         <a href="#summary">About</a>
         <a href="#skills">Skills</a>
         <a href="#featured-projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#contact">Contact Me</a>
     </div>
 </nav>
 
@@ -410,7 +409,7 @@
     <header>
         <div class="header-title">
             <h1>Gani GÜRGAH</h1>
-            <h2>Senior Java Engineer | Generative AI & RAG Specialist | Apache NetBeans Contributor</h2>
+            <h2>Senior Enterprise Architect &bull; Generative AI &amp; Sovereign RAG Specialist &bull; Apache NetBeans Contributor</h2>
         </div>
         <div class="contact-info">
             <div class="contact-info">
@@ -637,16 +636,22 @@
     </a>
 
     <section id="contact" style="padding: 40px 0;">
-        <h3 class="section-title" style="margin-bottom: 24px;">Contact Me</h3>
+        <h3 class="section-title" style="margin-bottom: 24px; text-transform: none;">Get In Touch</h3>
 
         <!-- Linklerin yan yana düzgün dizilmesi ve aralarında boşluk olması için esnek kutu (Flexbox) -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; width: 100%;">
 
             <!-- Telefon -->
-            <a href="tel:+905066492433" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
-                <i class="fa-solid fa-phone-volume fa-xl" style="color: #4dabf7 !important;"></i>
-                <span style="text-decoration: none !important;">+90 506 649 24 33</span>
-            </a>
+            <span style="display: inline-flex; align-items: center; text-decoration: none !important; color: #333333 !important;">
+                <a href="https://wa.me/905066492433?text=Hi," target="_blank" rel="noopener" aria-label="WhatsApp" style="text-decoration: none !important; display: inline-block; line-height: 0;">
+                    <i class="fa-brands fa-whatsapp fa-xl" style="color: #25D366 !important; margin-right: 8px !important;"></i>
+                </a>
+                <span style="margin-right: 8px !important; color: #666; font-weight: 500;">+</span>
+                <a href="tel:+905066492433" style="display: inline-flex; align-items: center; text-decoration: none !important; color: #333333 !important;">
+                    <i class="fa-solid fa-phone-volume fa-xl" style="color: #4dabf7 !important; margin-right: 12px !important;"></i>
+                    <span>+90 506 649 24 33</span>
+                </a>
+            </span>
 
             <!-- E-posta -->
             <a href="mailto:ganigurgah@gmail.com" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
@@ -659,13 +664,6 @@
                 <i class="fa-brands fa-linkedin fa-xl" style="color: #0a66c2 !important;"></i>
                 <span style="text-decoration: none !important;">LinkedIn</span>
             </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/ganigurgah/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
-                <i class="fa-brands fa-github fa-xl" style="color: #24292f !important;"></i>
-                <span style="text-decoration: none !important;">GitHub</span>
-            </a>
-
         </div>
     </section>
 
