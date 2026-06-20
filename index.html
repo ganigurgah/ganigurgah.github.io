@@ -6,6 +6,10 @@
     <title>Gani Gürgah - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --primary-color: #1a365d;
             --secondary-color: #2b6cb0;
@@ -182,7 +186,7 @@
             border-radius: 6px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
 
         .project-header {
@@ -342,19 +346,24 @@
             nav {
                 padding: 1rem;
             }
+
             .container {
                 padding: 20px;
                 margin-top: 80px;
             }
+
             .skills-grid, .oss-container {
                 grid-template-columns: 1fr;
             }
+
             .exp-group {
                 padding: 15px;
             }
+
             .header-title h1 {
                 font-size: 26px;
             }
+
             footer {
                 flex-direction: column;
                 text-align: center;
@@ -366,15 +375,18 @@
             body {
                 background: #ffffff;
             }
+
             nav {
                 display: none;
             }
+
             .container {
                 box-shadow: none;
                 padding: 0;
                 margin: 0;
                 max-width: 100%;
             }
+
             .project-card, .skill-category, .oss-card, .exp-group {
                 page-break-inside: avoid;
             }
@@ -390,6 +402,7 @@
         <a href="#skills">Skills</a>
         <a href="#featured-projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#contact">Contact Me</a>
     </div>
 </nav>
 
@@ -402,10 +415,19 @@
         <div class="contact-info">
             <div class="contact-info">
                 <span>📍 Istanbul, Turkey</span>
-                <span>📞 +90 506 649 24 33</span>
-                <span><i class="fas fa-envelope" style="color: #ea4335; font-size: 14px;"></i> <a href="mailto:ganigurgah@gmail.com">Email</a></span>
-                <span><i class="fab fa-linkedin" style="color: #0a66c2; font-size: 15px;"></i> <a href="https://linkedin.com/in/ganigurgah" target="_blank">LinkedIn</a></span>
-                <span><i class="fab fa-github" style="color: #24292f; font-size: 15px;"></i> <a href="https://github.com/ganigurgah/" target="_blank">GitHub</a></span>
+                <span>
+                    <a href="tel:+905066492433" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
+                    <i class="fa-solid fa-phone-volume" style="color: #4dabf7 !important;"></i>
+                    +90 506 649 24 33
+                    </a>
+                </span>
+
+                <span><i class="fas fa-envelope" style="color: #ea4335;"></i> <a
+                        href="mailto:ganigurgah@gmail.com">Email</a></span>
+                <span><i class="fab fa-linkedin" style="color: #0a66c2; font-size: 15px;"></i> <a
+                        href="https://linkedin.com/in/ganigurgah" target="_blank">LinkedIn</a></span>
+                <span><i class="fab fa-github" style="color: #24292f; font-size: 15px;"></i> <a
+                        href="https://github.com/ganigurgah/" target="_blank">GitHub</a></span>
             </div>
         </div>
     </header>
@@ -413,7 +435,15 @@
     <section id="summary">
         <h3 class="section-title">Professional Summary</h3>
         <p class="summary-text">
-            High-impact Technical Engineer with 15+ years of enterprise Java development experience combined with production-ready Generative AI and RAG system integrations (LangChain4j, ChromaDB, Ollama). Specializing in bridging the gap between robust, mission-critical legacy systems (Delphi, PL/SQL, Oracle) and cutting-edge Sovereign AI (Local/On-Prem LLM) architectures. Proven track record of spearheading large-scale core migrations, microservices transformations, and secure AI-native automation pipelines within highly regulated sectors like healthcare and insurance, prioritizing strict Data Privacy and 0-TL licensing overhead. Backed by a deep enterprise support background — production log analysis, runtime error diagnosis, application performance monitoring, and user-facing technical documentation — consistently delivering maintainable, well-documented systems in every engagement.
+            High-impact Technical Engineer with 15+ years of enterprise Java development experience combined with
+            production-ready Generative AI and RAG system integrations (LangChain4j, ChromaDB, Ollama). Specializing in
+            bridging the gap between robust, mission-critical legacy systems (Delphi, PL/SQL, Oracle) and cutting-edge
+            Sovereign AI (Local/On-Prem LLM) architectures. Proven track record of spearheading large-scale core
+            migrations, microservices transformations, and secure AI-native automation pipelines within highly regulated
+            sectors like healthcare and insurance, prioritizing strict Data Privacy and 0-TL licensing overhead. Backed
+            by a deep enterprise support background — production log analysis, runtime error diagnosis, application
+            performance monitoring, and user-facing technical documentation — consistently delivering maintainable,
+            well-documented systems in every engagement.
         </p>
     </section>
 
@@ -422,23 +452,30 @@
         <div class="skills-grid">
             <div class="skill-category">
                 <h4><i class="fas fa-microchip"></i> AI & RAG Architecture</h4>
-                <p>Generative AI, RAG Architectures, Local LLM Integration (Ollama), LangChain4j, Vector Databases (ChromaDB), Semantic Search, Quantization, Data Privacy Assurance</p>
+                <p>Generative AI, RAG Architectures, Local LLM Integration (Ollama), LangChain4j, Vector Databases
+                    (ChromaDB), Semantic Search, Quantization, Data Privacy Assurance</p>
             </div>
             <div class="skill-category">
                 <h4><i class="fas fa-code"></i> Backend & Enterprise Java</h4>
-                <p>Java Core, Java EE, Jakarta EE, Spring Boot, Spring Framework, Spring AI, Microservices, RESTful APIs, SOAP, JSF (Jakarta Faces), PrimeFaces, BootFaces, JSP, JavaScript, jQuery, Delphi, C#, Python</p>
+                <p>Java Core, Java EE, Jakarta EE, Spring Boot, Spring Framework, Spring AI, Microservices, RESTful
+                    APIs, SOAP, JSF (Jakarta Faces), PrimeFaces, BootFaces, JSP, JavaScript, jQuery, Delphi, C#,
+                    Python</p>
             </div>
             <div class="skill-category">
                 <h4><i class="fas fa-database"></i> Database & Advanced Querying</h4>
-                <p>Oracle DB, PL/SQL Architectures, PostgreSQL, MySQL, MS SQL, Database Performance Optimization, High-Volume Data Migration</p>
+                <p>Oracle DB, PL/SQL Architectures, PostgreSQL, MySQL, MS SQL, Database Performance Optimization,
+                    High-Volume Data Migration</p>
             </div>
             <div class="skill-category">
                 <h4><i class="fas fa-cubes"></i> Architecture & Infrastructure</h4>
-                <p>Event-Driven Architecture, Microservices Transformation, Docker, Multi-tenancy, On-Premises Deployment, RabbitMQ, Kafka, WebLogic, WebSphere, Apache Tomcat, TomEE, GlassFish, Payara, Network Load Balancer, Application Performance Monitoring (APM)</p>
+                <p>Event-Driven Architecture, Microservices Transformation, Docker, Multi-tenancy, On-Premises
+                    Deployment, RabbitMQ, Kafka, WebLogic, WebSphere, Apache Tomcat, TomEE, GlassFish, Payara, Network
+                    Load Balancer, Application Performance Monitoring (APM)</p>
             </div>
             <div class="skill-category">
                 <h4><i class="fas fa-terminal"></i> Linux & DevOps</h4>
-                <p>Linux Server Administration (Fedora, RHEL), Apache Tomcat / TomEE Admin, Git, Bitbucket, Jenkins CI/CD, Docker Compose, Network Load Balancer Configuration</p>
+                <p>Linux Server Administration (Fedora, RHEL), Apache Tomcat / TomEE Admin, Git, Bitbucket, Jenkins
+                    CI/CD, Docker Compose, Network Load Balancer Configuration</p>
             </div>
         </div>
     </section>
@@ -449,23 +486,36 @@
         <div class="project-card">
             <div class="project-header">
                 <h4 class="project-title">Archon - AI-Driven SDLC Automation Control Plane</h4>
-                <a href="https://ganigurgah.github.io/archon-info/" class="project-link" target="_blank">Project Link &rarr;</a>
+                <a href="https://ganigurgah.github.io/archon-info/" class="project-link" target="_blank">Project Link
+                    &rarr;</a>
             </div>
             <ul>
-                <li>Architected and developed a private, secure, local hybrid AI control plane designed to orchestrate automated technical decision-making and streamline the Software Development Life Cycle (SDLC) for enterprise repositories.</li>
-                <li>Implemented autonomous local AI agents that ingest and scan codebases (Git repositories or local paths) to generate standard-compliant source code and conduct context-aware automated Code Reviews.</li>
-                <li>Enforced an on-premise, air-gapped deployment strategy using local vector indexing to guarantee strict enterprise Data Privacy, eliminating external API dependency and data leakage risks.</li>
+                <li>Architected and developed a private, secure, local hybrid AI control plane designed to orchestrate
+                    automated technical decision-making and streamline the Software Development Life Cycle (SDLC) for
+                    enterprise repositories.
+                </li>
+                <li>Implemented autonomous local AI agents that ingest and scan codebases (Git repositories or local
+                    paths) to generate standard-compliant source code and conduct context-aware automated Code Reviews.
+                </li>
+                <li>Enforced an on-premise, air-gapped deployment strategy using local vector indexing to guarantee
+                    strict enterprise Data Privacy, eliminating external API dependency and data leakage risks.
+                </li>
             </ul>
         </div>
 
         <div class="project-card">
             <div class="project-header">
                 <h4 class="project-title">Marketplace Java SDK (Native Java Core)</h4>
-                <a href="https://github.com/ganigurgah/marketplace-sdk" class="project-link" target="_blank">View On GitHub &rarr;</a>
+                <a href="https://github.com/ganigurgah/marketplace-sdk" class="project-link" target="_blank">View On
+                    GitHub &rarr;</a>
             </div>
             <ul>
-                <li>Built a lightweight, zero-dependency native Java SDK providing seamless, no-code synchronization with major e-commerce marketplaces (Trendyol, Hepsiburada, N11, Amazon TR).</li>
-                <li>Created a structure to manage API schema changes using YAML, eliminating binary rebuilds and redeployments.</li>
+                <li>Built a lightweight, zero-dependency native Java SDK providing seamless, no-code synchronization
+                    with major e-commerce marketplaces (Trendyol, Hepsiburada, N11, Amazon TR).
+                </li>
+                <li>Created a structure to manage API schema changes using YAML, eliminating binary rebuilds and
+                    redeployments.
+                </li>
             </ul>
         </div>
     </section>
@@ -475,11 +525,13 @@
         <div class="oss-container">
             <div class="oss-card">
                 <h4>🪶 Apache NetBeans Core Contributor</h4>
-                <p>Successfully engineered and contributed the official integration layer to support Oracle WebLogic 14.x and 15.x application servers within the core NetBeans IDE architecture.</p>
+                <p>Successfully engineered and contributed the official integration layer to support Oracle WebLogic
+                    14.x and 15.x application servers within the core NetBeans IDE architecture.</p>
             </div>
             <div class="oss-card">
                 <h4>🪶 Apache NetBeans Test Contributor</h4>
-                <p>Active participant in testing new core features and security patches in NetBeans IDE before official release cycles.</p>
+                <p>Active participant in testing new core features and security patches in NetBeans IDE before official
+                    release cycles.</p>
             </div>
         </div>
     </section>
@@ -490,39 +542,130 @@
         <div class="exp-group">
             <h4 class="group-title"><i class="fas fa-brain"></i> AI Engineering & Modern Data Architecture</h4>
             <ul class="exp-list">
-                <li>Designing and engineering full-stack <strong>AI-Native corporate systems</strong> using Java and Python, focusing on secure local inference models and LLM routing workflows.</li>
-                <li>Architecting production-ready <strong>RAG frameworks</strong> to semantically digest unstructured corporate knowledge bases and feed local LLM agents securely.</li>
-                <li>Deploying and optimizing <strong>ChromaDB vector storage</strong> configurations to execute low-latency semantic search queries and high-density vector embedding lookups.</li>
+                <li>Designing and engineering full-stack <strong>AI-Native corporate systems</strong> using Java and
+                    Python, focusing on secure local inference models and LLM routing workflows.
+                </li>
+                <li>Architecting production-ready <strong>RAG frameworks</strong> to semantically digest unstructured
+                    corporate knowledge bases and feed local LLM agents securely.
+                </li>
+                <li>Deploying and optimizing <strong>ChromaDB vector storage</strong> configurations to execute
+                    low-latency semantic search queries and high-density vector embedding lookups.
+                </li>
             </ul>
         </div>
 
         <div class="exp-group">
-            <h4 class="group-title"><i class="fas fa-network-wired"></i> Enterprise Integration & Core Transformation</h4>
+            <h4 class="group-title"><i class="fas fa-network-wired"></i> Enterprise Integration & Core Transformation
+            </h4>
             <ul class="exp-list">
-                <li><strong>Enterprise Integration & Security:</strong> Developed a full-stack integration layer (Java & PL/SQL) enabling seamless "upload-to-policy" conversion for third-party files (Excel, JSON, TXT) from retail partners like <em>MediaMarkt, Turkcell, and Teknosa</em>.</li>
-                <li><strong>Microservices Transformation:</strong> Migrated a high-traffic monolithic core engine to <strong>Spring Boot microservices</strong>, leveraging Apache Zuul for seamless horizontal scaling.</li>
-                <li><strong>High-Performance Optimization:</strong> Refactored bottlenecked database queries and Java layers within critical reporting systems, slashing processing times from <strong>80 seconds down to 3 seconds</strong> (a 96% performance gain).</li>
-                <li><strong>Technical Debt Elimination:</strong> Spearheaded the architectural overhaul and migration of a complex enterprise UI codebase containing thousands of XHTML files from <strong>PrimeFaces 4.1.17 up to PrimeFaces 13</strong> within a rigorous 4-week deadline.</li>
-                <li><strong>Platform Agnosticism:</strong> Decoupled tight WebLogic dependencies, modernizing the application ecosystem to be fully containerized and agnostic across major servers.</li>
-                <li><strong>Vulnerability Mitigation:</strong> Hardened applications against complex Penetration Test flags. Integrated enterprise LDAP, Active Directory, and Certificate-Based authentication protocols.</li>
-                <li>Conducting comprehensive database tuning and performance optimization on legacy relational structures using advanced <strong>PL/SQL algorithms</strong> and indexing strategies.</li>
-                <li><strong>Production Support &amp; Observability:</strong> Monitored application logs, diagnosed runtime errors, and resolved production incidents on enterprise Java applications — ensuring SLA compliance and system continuity across healthcare and insurance platforms.</li>
-                <li><strong>User-Facing Technical Support &amp; Documentation:</strong> Collaborated directly with end users to resolve issues and fulfill enhancement requests; authored comprehensive technical documentation (installation guides, functional specs, API references) as a standard practice across all projects.</li>
+                <li><strong>Enterprise Integration & Security:</strong> Developed a full-stack integration layer (Java &
+                    PL/SQL) enabling seamless "upload-to-policy" conversion for third-party files (Excel, JSON, TXT)
+                    from retail partners like <em>MediaMarkt, Turkcell, and Teknosa</em>.
+                </li>
+                <li><strong>Microservices Transformation:</strong> Migrated a high-traffic monolithic core engine to
+                    <strong>Spring Boot microservices</strong>, leveraging Apache Zuul for seamless horizontal scaling.
+                </li>
+                <li><strong>High-Performance Optimization:</strong> Refactored bottlenecked database queries and Java
+                    layers within critical reporting systems, slashing processing times from <strong>80 seconds down to
+                        3 seconds</strong> (a 96% performance gain).
+                </li>
+                <li><strong>Technical Debt Elimination:</strong> Spearheaded the architectural overhaul and migration of
+                    a complex enterprise UI codebase containing thousands of XHTML files from <strong>PrimeFaces 4.1.17
+                        up to PrimeFaces 13</strong> within a rigorous 4-week deadline.
+                </li>
+                <li><strong>Platform Agnosticism:</strong> Decoupled tight WebLogic dependencies, modernizing the
+                    application ecosystem to be fully containerized and agnostic across major servers.
+                </li>
+                <li><strong>Vulnerability Mitigation:</strong> Hardened applications against complex Penetration Test
+                    flags. Integrated enterprise LDAP, Active Directory, and Certificate-Based authentication protocols.
+                </li>
+                <li>Conducting comprehensive database tuning and performance optimization on legacy relational
+                    structures using advanced <strong>PL/SQL algorithms</strong> and indexing strategies.
+                </li>
+                <li><strong>Production Support &amp; Observability:</strong> Monitored application logs, diagnosed
+                    runtime errors, and resolved production incidents on enterprise Java applications — ensuring SLA
+                    compliance and system continuity across healthcare and insurance platforms.
+                </li>
+                <li><strong>User-Facing Technical Support &amp; Documentation:</strong> Collaborated directly with end
+                    users to resolve issues and fulfill enhancement requests; authored comprehensive technical
+                    documentation (installation guides, functional specs, API references) as a standard practice across
+                    all projects.
+                </li>
             </ul>
         </div>
 
         <div class="exp-group">
             <h4 class="group-title"><i class="fas fa-hospital-user"></i> National Healthcare Informatics Systems</h4>
             <ul class="exp-list">
-                <li>Led full-stack engineering for nationwide health informatics, driving technical decisions to enhance system throughput and reliability.</li>
-                <li>Improved low-latency real-time data sync bridges with the national <strong>e-Nabız registry</strong>, allowing clinicians instantaneous diagnostic data lookups at the point of care.</li>
-                <li>Built a dynamic, multi-tenant Report Marketplace infrastructure allowing healthcare institutions to dynamically toggle and instantiate custom-designed templates on demand.</li>
-                <li>Mitigated billing leakages and compliance risks by refactoring accounting algorithms to maintain 100% synchronization with shifting national healthcare regulations (<strong>SUT</strong>) and the <strong>Medula portal</strong>.</li>
-                <li>Architected high-throughput batch jobs to streamline and prioritize automated e-Nabız data transmissions.</li>
-                <li>Engineered a message-queue backbone using <strong>RabbitMQ</strong> to throttle and manage asynchronous data transmission bursts to external state endpoints.</li>
-                <li>Built a high-speed, lightweight Java data migration utility capable of transferring multi-terabyte healthcare records across differing database formats without causing downtime.</li>
-                <li>Invited by the <strong>Ministry of Health</strong> as a technical expert to deliver official integration workshops and compliance training frameworks to competing enterprise health informatics vendors.</li>
+                <li>Led full-stack engineering for nationwide health informatics, driving technical decisions to enhance
+                    system throughput and reliability.
+                </li>
+                <li>Improved low-latency real-time data sync bridges with the national <strong>e-Nabız registry</strong>,
+                    allowing clinicians instantaneous diagnostic data lookups at the point of care.
+                </li>
+                <li>Built a dynamic, multi-tenant Report Marketplace infrastructure allowing healthcare institutions to
+                    dynamically toggle and instantiate custom-designed templates on demand.
+                </li>
+                <li>Mitigated billing leakages and compliance risks by refactoring accounting algorithms to maintain
+                    100% synchronization with shifting national healthcare regulations (<strong>SUT</strong>) and the
+                    <strong>Medula portal</strong>.
+                </li>
+                <li>Architected high-throughput batch jobs to streamline and prioritize automated e-Nabız data
+                    transmissions.
+                </li>
+                <li>Engineered a message-queue backbone using <strong>RabbitMQ</strong> to throttle and manage
+                    asynchronous data transmission bursts to external state endpoints.
+                </li>
+                <li>Built a high-speed, lightweight Java data migration utility capable of transferring multi-terabyte
+                    healthcare records across differing database formats without causing downtime.
+                </li>
+                <li>Invited by the <strong>Ministry of Health</strong> as a technical expert to deliver official
+                    integration workshops and compliance training frameworks to competing enterprise health informatics
+                    vendors.
+                </li>
             </ul>
+        </div>
+    </section>
+
+    <!-- Sağ Altta Sabit Yüzen İletişime Kaydırma (Let's Talk) Butonu -->
+    <a data-feature="scroll-to-contact" href="#contact"
+       style="position: fixed; bottom: 24px; right: 24px; background-color: #006bff; color: #ffffff; padding: 12px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-family: sans-serif; font-weight: 600; font-size: 14px; text-decoration: none !important; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s ease, background-color: 0.2s ease;"
+       onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='#0056cb';"
+       onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#006bff';">
+        <i class="fa-regular fa-comments fa-lg" style="color: #ffffff !important;"></i>
+        <span>Let's Talk</span>
+    </a>
+
+    <section id="contact" style="padding: 40px 0;">
+        <h3 class="section-title" style="margin-bottom: 24px;">Contact Me</h3>
+
+        <!-- Linklerin yan yana düzgün dizilmesi ve aralarında boşluk olması için esnek kutu (Flexbox) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+
+            <!-- Telefon -->
+            <a href="tel:+905066492433" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
+                <i class="fa-solid fa-phone-volume fa-xl" style="color: #4dabf7 !important;"></i>
+                <span style="text-decoration: none !important;">+90 506 649 24 33</span>
+            </a>
+
+            <!-- E-posta -->
+            <a href="mailto:ganigurgah@gmail.com" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
+                <i class="fa-regular fa-envelope fa-xl" style="color: #868e96 !important;"></i>
+                <span style="text-decoration: none !important;">ganigurgah@gmail.com</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/ganigurgah" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
+                <i class="fa-brands fa-linkedin fa-xl" style="color: #0a66c2 !important;"></i>
+                <span style="text-decoration: none !important;">LinkedIn</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/ganigurgah/" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; text-decoration: none !important; color: #333333 !important;">
+                <i class="fa-brands fa-github fa-xl" style="color: #24292f !important;"></i>
+                <span style="text-decoration: none !important;">GitHub</span>
+            </a>
+
         </div>
     </section>
 
@@ -550,6 +693,7 @@
             console.error('Counter error', e);
         }
     }
+
     updateCounter();
 </script>
 </body>
